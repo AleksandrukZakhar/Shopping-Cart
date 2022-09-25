@@ -1,0 +1,46 @@
+@import "../index.scss/";
+
+$alpha-black: hsl(0, 0%, 0%, 0.4);
+$black-primary: hsl(0, 0%, 0%);
+$white-primary: hsl(0, 0%, 100%);
+
+body {
+    overflow: hidden;
+}
+
+.background {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.filter {
+    @include flex(column, center, center);
+
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-color: $alpha-black;
+
+    h1 {
+        font-size: 6rem;
+        color: $white-primary;
+    }
+
+    button {
+        width: 150px;
+        height: 40px;
+        border: 1px solid $white-primary;
+        color: $white-primary;
+        background-color: transparent;
+        font-size: 1.2rem;
+
+        &:hover {
+            transition: 0.3s ease-in-out;
+            color: $black-primary;
+            background-color: $white-primary;
+        }
+    }
+}
