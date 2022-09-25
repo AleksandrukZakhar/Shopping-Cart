@@ -1,7 +1,18 @@
-import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Home.js";
+import Shop from "./Shop.js";
+import ShopItem from "./ShopItem.js";
 
 const App = () => {
-  return <div className="App"></div>;
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/shop" element={<Shop />} />
+                <Route path="/shop/:id" element={<ShopItem />} />
+            </Routes>
+        </BrowserRouter>
+    );
 };
 
 export default App;
