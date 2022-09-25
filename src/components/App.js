@@ -29,7 +29,7 @@ export const products = [
 ];
 
 const App = () => {
-    const [cart, setCart] = useState(null);
+    const [cart, setCart] = useState([]);
 
     return (
         <cartContext.Provider value={[cart, setCart]}>
