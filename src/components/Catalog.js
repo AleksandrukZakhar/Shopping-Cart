@@ -1,21 +1,20 @@
 import "./Catalog.scss";
-import { useContext } from "react";
-import { productsContext } from "./App";
+import { products } from "./App.js";
+import CatalogItem from "./CatalogItem.js";
 
 const Catalog = () => {
-    const productContext = useContext(productsContext);
-
     return (
         <>
             <h1>Catalog</h1>
             <div className="products-container">
-                {productContext.map((product) => {
+                {products.map((product) => {
                     return (
-                        <div className="product-container" key={product.id}>
-                            <img src={product.img} alt={product.productName} />
-                            <h2>{product.productName}</h2>
-                            <button>Buy</button>
-                        </div>
+                        <CatalogItem
+                            key={product.id}
+                            id={product.id}
+                            img={product.img}
+                            name={product.productName}
+                        />
                     );
                 })}
             </div>

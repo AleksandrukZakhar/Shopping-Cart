@@ -1,9 +1,15 @@
-import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const CatalogItem = () => {
-    const params = useParams();
-
-    return <h1>Shop Item {params.id}</h1>;
+const CatalogItem = ({ id, img, name }) => {
+    return (
+        <div className="product-container" key={id}>
+            <img src={img} alt={name} />
+            <h2>{name}</h2>
+            <Link to={`/shop/${id}`}>
+                <button>Buy</button>
+            </Link>
+        </div>
+    );
 };
 
 export default CatalogItem;
