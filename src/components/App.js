@@ -5,9 +5,9 @@ import Home from "./Home.js";
 import Catalog from "./Catalog.js";
 import ItemDetails from "./ItemDetails.js";
 
-export const cartContext = createContext();
+export const appContext = createContext();
 
-export const products = [
+const products = [
     {
         id: uid(),
         productName: "ryzen 5 5000",
@@ -30,17 +30,18 @@ export const products = [
 
 const App = () => {
     const [cart, setCart] = useState([]);
+    const [show, setShow] = useState(false);
 
     return (
-        <cartContext.Provider value={[cart, setCart]}>
-            <BrowserRouter>
+        <appContext.Provider value={{ cart, setCart, show, setShow, products }}>
+            <BrowserRouter basename="/shopping-cart/">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/shop" element={<Catalog />} />
                     <Route path="/shop/:id" element={<ItemDetails />} />
                 </Routes>
             </BrowserRouter>
-        </cartContext.Provider>
+        </appContext.Provider>
     );
 };
 

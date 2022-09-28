@@ -1,9 +1,9 @@
-import "./AddToCart.scss";
+import "../index.scss";
 import { useContext, useState } from "react";
-import { cartContext } from "./App.js";
+import { appContext } from "./App.js";
 
 const AddToCart = ({ name, price, img, setShow }) => {
-    const setCart = useContext(cartContext)[1];
+    const { setCart } = useContext(appContext);
     const [quantity, setQuantity] = useState(1);
 
     return (
@@ -32,7 +32,7 @@ const AddToCart = ({ name, price, img, setShow }) => {
                                 ...prev,
                                 {
                                     name,
-                                    totalPrice: price,
+                                    totalPrice: price * quantity,
                                     img,
                                 },
                             ];

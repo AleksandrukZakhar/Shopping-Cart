@@ -1,4 +1,4 @@
-import "./Home.scss";
+import "../index.scss";
 import Background from "../assets/background.jpg";
 import { Link } from "react-router-dom";
 

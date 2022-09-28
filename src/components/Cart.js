@@ -1,11 +1,11 @@
-import "./Cart.scss";
+import "../index.scss";
 import { useContext } from "react";
-import { cartContext } from "./App.js";
+import { appContext } from "./App.js";
 import { uid } from "uid";
 import { ReactComponent as Cross } from "../assets/cross.svg";
 
 const Cart = ({ setShow }) => {
-    const [cart] = useContext(cartContext);
+    const { cart } = useContext(appContext);
 
     return (
         <div className="center">
